@@ -22,7 +22,7 @@ class Mun extends Particle{
   }
   
   void applyG(Particle p){
-    //Vec2 mypos = worldPosition;
+    //Vec2 mypos = worldPosition;                      // distance is distance to particle
     Vec2 ppos = p.body.getPosition();
     Vec2 f = body.getPosition().sub(ppos);
     float distance = f.length();
@@ -33,8 +33,9 @@ class Mun extends Particle{
     
     println("Moon mass: " + body.getMass());
     println("Moon distance: " + distance);
-    println(defaultMass);
-    println(planetMass);
+    println("Particle Position: " + ppos);
+    println("G: " + G);
+    println("Planet Mass: " + planetMass);
     
     
     f = f.mulLocal(G*((body.getMass()*p.body.getMass())/(distance*distance)));
@@ -43,6 +44,7 @@ class Mun extends Particle{
     if(p instanceof Mun){
     }else{
       body.applyForce(f, body.getWorldCenter());
+      println("Grav force vector: " + f);
     }
    
   }

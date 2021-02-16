@@ -31,7 +31,7 @@ class Particle {
   }
   Particle(float x, float y){
     //this(x,y,0.62832f);
-    this(x,y,defaultMass, random(1));
+    this(x,y,defaultMass, random(1));   //RANDOM IS THE ROCK PERCENT
   }
   
   void setOrbitVelocity(Planet pn){
@@ -93,6 +93,7 @@ class Particle {
     bd.fixedRotation = true;
     // Set its position
     bd.position = box2d.coordPixelsToWorld(x, y);
+    println("Position: " + bd.position);
     bd.type = BodyType.DYNAMIC;
     body = box2d.createBody(bd);
 

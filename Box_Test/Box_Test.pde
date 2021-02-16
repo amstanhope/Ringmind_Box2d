@@ -1,4 +1,3 @@
-
 import controlP5.*;
 import shiffman.box2d.*;
 import org.jbox2d.collision.shapes.*;
@@ -45,7 +44,7 @@ float combinedSizeRange = 2.0f;
 float rocheLimit = 350f;
 float rocheLimitRange = 50f;
 float burstSize = 15;
-float burstSizeRange = 5;
+float burstSizeRange = 5; //<>//
 
 //colors
 color backColor = color(27, 38, 44);
@@ -87,6 +86,7 @@ void init()
   {
     float radians = rdbt(0,2*PI);
     float this_ringdius = (rdbt(inner_ringdius, outter_ringdius));
+    //float this_ringdius = 365;
     float x = this_ringdius*(float)Math.cos(radians)+planet.pixelPosition.x;
     float y = this_ringdius*(float)Math.sin(radians)+planet.pixelPosition.y;
     Particle p = new Particle(x, y);
@@ -108,7 +108,7 @@ void init()
 }
 void draw() 
 {
-  if(pPressed)
+  if(pPressed) // if not paused
   {
     background(backColor);
     //println(frameRate);
