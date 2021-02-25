@@ -31,7 +31,7 @@ class Particle {
   }
   Particle(float x, float y){
     //this(x,y,0.62832f);
-    this(x,y,defaultMass, random(1));   //RANDOM IS THE ROCK PERCENT
+    this(x,y,defaultMass, 0.01);   //RANDOM IS THE ROCK PERCENT
   }
   
   void setOrbitVelocity(Planet pn){
@@ -47,7 +47,7 @@ class Particle {
   
   void setDensity(float rock, float totalmass){
     density = rock*rockDensity+(1-rock)*iceDensity;
-    r = (float)Math.sqrt(totalmass/density/PI);
+    r = (float)Math.sqrt(totalmass/density/PI); // this isn't the true radius but it's the radius for the picture
   }
   // 
   
@@ -58,7 +58,7 @@ class Particle {
     r = box2d.scalarWorldToPixels(r);
     float bstprob = sigmoid(r, burstSize, burstSizeRange);
     //println(r);
-    if(!roche_check(pos)||random(1)<bstprob){
+    if(!roche_check(pos,m,density)||random(1)<bstprob){
       new Burst(this);
     }
   }
@@ -93,7 +93,7 @@ class Particle {
     bd.fixedRotation = true;
     // Set its position
     bd.position = box2d.coordPixelsToWorld(x, y);
-    println("Position: " + bd.position);
+    //println("Position: " + bd.position);
     bd.type = BodyType.DYNAMIC;
     body = box2d.createBody(bd);
 

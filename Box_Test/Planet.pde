@@ -16,6 +16,7 @@ class Planet{
         f.normalize();
         f = f.mulLocal(G*((planetMass*p.body.getMass())/(distance*distance)));
         p.body.applyForce(f, p.body.getWorldCenter());
+        //println("Mass" + p.body.getMass());
     }
     
     void applyG(Camera c){

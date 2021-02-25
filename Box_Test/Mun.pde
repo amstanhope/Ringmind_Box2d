@@ -18,7 +18,7 @@ class Mun extends Particle{
     
   }
   Mun(float x, float y){
-    this(x,y,defaultMass, random(1));
+    this(x,y,defaultMass, 0);
   }
   
   void applyG(Particle p){
@@ -31,11 +31,11 @@ class Mun extends Particle{
     distance = Math.max(minDistance, distance);
     f.normalize();
     
-    println("Moon mass: " + body.getMass());
+   /* println("Moon mass: " + body.getMass());
     println("Moon distance: " + distance);
     println("Particle Position: " + ppos);
     println("G: " + G);
-    println("Planet Mass: " + planetMass);
+    println("Planet Mass: " + planetMass); */
     
     
     f = f.mulLocal(G*((body.getMass()*p.body.getMass())/(distance*distance)));
@@ -44,7 +44,7 @@ class Mun extends Particle{
     if(p instanceof Mun){
     }else{
       body.applyForce(f, body.getWorldCenter());
-      println("Grav force vector: " + f);
+      //println("Grav force vector: " + f);
     }
    
   }

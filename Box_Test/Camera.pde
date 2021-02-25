@@ -9,6 +9,7 @@ class Camera
   {
     float radians = rdbt(0,2*PI);
     float this_ringdius = (inner_ringdius+outter_ringdius)/2;
+    //float this_ringdius = 30f;
     float x = this_ringdius*(float)Math.cos(radians)+planet.pixelPosition.x;
     float y = this_ringdius*(float)Math.sin(radians)+planet.pixelPosition.y;
     pos = new Vec2(x,y);

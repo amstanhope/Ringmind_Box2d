@@ -45,7 +45,7 @@ public void initControls(){
     ;
     
   puttons.add(new Putton("G", 50,50, 6.674e-11f, 3.674e-11f));
-  puttons.add(new Putton("partis", 50, 70, 600, 500));
+  puttons.add(new Putton("partis", 50, 70, 40, 500));
   puttons.add(new Putton("inner_ringdius", 50, 90, 300f, 200f));
   puttons.add(new Putton("outter_ringdius", 50, 110, 430f, 200f));
   
@@ -56,7 +56,7 @@ public void initControls(){
     .setColorValue(0xffE5F3FF)
     .setFont(createFont("Arial",17))
   ;
-  puttons.add(new Putton("moon_min", 50, 0+off, 8, 4));
+  puttons.add(new Putton("moon_min", 50, 0+off, 1, 4));
   puttons.add(new Putton("burstNum", 50, 20+off, 8, 6));
   puttons.add(new Putton("rockDensity", 50, 40+off, 5, 4));
   puttons.add(new Putton("iceDensity", 50, 60+off, 1f, .6f));

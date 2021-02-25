@@ -4,6 +4,7 @@ import org.jbox2d.collision.shapes.*;
 import org.jbox2d.common.*;
 import org.jbox2d.dynamics.*;
 import org.jbox2d.dynamics.contacts.*;
+import java.lang.Math.*;
 
 
 ArrayList<Particle> pars;
@@ -24,18 +25,19 @@ int partis = 600;//number of initial particals
 float inner_ringdius = 300f;//inner radius of the ring
 float outter_ringdius = 430f;//outter radius of the ring
 //play
-float moon_min = 3e10f;//minimum mass of a moon
+float moon_min = 8.0f;//minimum mass of a moon
 int burstNum = 8;//number of particles generated after a burst
 float rockDensity = 5.0f;//density of rock(black part)
 float iceDensity = 1.0f;//density of ice(non-black part)
-float defaultMass = 2.5e10f;//initial mass of a particle *********** //<>//
+float defaultMass = 0.3f*PI;//initial mass of a particle
 float planetForceRange = 500f;//planetary gravity's maximum range(the big circle)
-float planetMass = 5e26f;
+float planetMass = 1e14f;
 float planetMinPixelsDistance = 70f;//planetary gravity's minimum range(the small circle)
+float planetDensity = 700f; //planetary density in kg/m^3
 float moonForceRange = 200f;
 int burst_check_frequency = 5;
 float burstAccel = 2f;//change of speed for bursted particles
-float minimumMass = 1e8f;
+float minimumMass = 0.1f*PI;
 //probabilities
 float relativeSize = 0.1f;
 float relativeSizeRange = 0.5f;
@@ -289,6 +291,7 @@ float rdbt(float min, float max){
 float sigmoid(float x, float shift, float expand){
   return 1.0f/(1.0f+exp((-x+shift)*(4/expand)));
 }
+
 color getColor(float mass){
   float max = 2;
   if(mass<=0){
@@ -300,3 +303,11 @@ color getColor(float mass){
   }
     
 }
+
+
+
+/*
+true distance = pixel*x +y
+x = 162791
+y = 56044651 (for distance in m)
+*/
