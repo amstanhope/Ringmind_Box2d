@@ -43,7 +43,7 @@ float relativeSize = 0.1f;
 float relativeSizeRange = 0.5f;
 float combinedSize = 5.0f;
 float combinedSizeRange = 2.0f;
-float rocheLimit = 350f;
+float rocheLimit = 464f;
 float rocheLimitRange = 50f;
 float burstSize = 15;
 float burstSizeRange = 5; //<>//
@@ -225,6 +225,7 @@ void displayNormal(){
   }
   stroke(122);
   noFill();
+  
   ellipse(width/2, height/2, rocheLimit*2,rocheLimit*2);
 }
 

@@ -63,7 +63,7 @@ public void initControls(){
   puttons.add(new Putton("defaultMass", 50, 80+off, 0.3f*PI, 0.3f*PI));
   puttons.add(new Putton("planetForceRange", 50, 100+off, 700, 200));
   puttons.add(new Putton("planetMass", 50, 120+off, 0.5e14f, 2.0e14f, true));
-  puttons.add(new Putton("planetMinPixelsDistance", 50, 140+off, 240, 60));
+  puttons.add(new Putton("planetMinPixelsDistance", 50, 140+off, 171, 60));
   puttons.add(new Putton("moonForceRange", 50, 160+off, 200, 100));
   puttons.add(new Putton("burst_check_frequency", 50, 180+off, 5, 4));
   puttons.add(new Putton("burstAccel", 50, 200+off, 2, 1));
@@ -80,7 +80,7 @@ public void initControls(){
   puttons.add(new Putton("relativeSizeRange", 50, 20+off, 0.5f, 0.5f));
   puttons.add(new Putton("combinedSize", 50, 40+off, 2.0f, 2.0f));
   puttons.add(new Putton("combinedSizeRange", 50, 60+off, 2f, 2f));
-  puttons.add(new Putton("rocheLimit", 50, 80+off, 350f, 300f));
+  puttons.add(new Putton("rocheLimit", 50, 80+off, 464f, 300f));
   puttons.add(new Putton("rocheLimitRange", 50, 100+off, 50, 50));
   puttons.add(new Putton("burtSize", 50, 120+off, 15, 15));
   puttons.add(new Putton("burstSizeRange", 50, 140+off, 5, 5));

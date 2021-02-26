@@ -161,7 +161,7 @@ boolean roche_check(Vec2 position, float mass, float density){
   println("Distance "+distance); //need the distance to be the distance to the middle.
  
    float scale = 162791;
-   scale = 250000;
+   scale = 350000;
    float offset = 56044651;
    offset = 0;
    float planetRad = 60000000; //in m
