@@ -31,7 +31,7 @@ class Particle {
   }
   Particle(float x, float y){
     //this(x,y,0.62832f);
-    this(x,y,defaultMass, 0.01);   //RANDOM IS THE ROCK PERCENT
+    this(x,y,defaultMass, random(0.05));   //RANDOM IS THE ROCK PERCENT
   }
   
   void setOrbitVelocity(Planet pn){

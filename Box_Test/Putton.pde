@@ -59,11 +59,11 @@ public void initControls(){
   puttons.add(new Putton("moon_min", 50, 0+off, 1, 4));
   puttons.add(new Putton("burstNum", 50, 20+off, 8, 6));
   puttons.add(new Putton("rockDensity", 50, 40+off, 5, 4));
-  puttons.add(new Putton("iceDensity", 50, 60+off, 1f, .6f));
+  puttons.add(new Putton("iceDensity", 50, 60+off, 0.88f, .6f));
   puttons.add(new Putton("defaultMass", 50, 80+off, 0.3f*PI, 0.3f*PI));
   puttons.add(new Putton("planetForceRange", 50, 100+off, 700, 200));
   puttons.add(new Putton("planetMass", 50, 120+off, 0.5e14f, 2.0e14f, true));
-  puttons.add(new Putton("planetMinPixelsDistance", 50, 140+off, 70, 60));
+  puttons.add(new Putton("planetMinPixelsDistance", 50, 140+off, 240, 60));
   puttons.add(new Putton("moonForceRange", 50, 160+off, 200, 100));
   puttons.add(new Putton("burst_check_frequency", 50, 180+off, 5, 4));
   puttons.add(new Putton("burstAccel", 50, 200+off, 2, 1));

@@ -161,12 +161,17 @@ boolean roche_check(Vec2 position, float mass, float density){
   println("Distance "+distance); //need the distance to be the distance to the middle.
  
    float scale = 162791;
+   scale = 250000;
    float offset = 56044651;
+   offset = 0;
    float planetRad = 60000000; //in m
+   
+   //planetRad = (float)Math.cbrt((3*planetMass)/(PI*planetDensity));
   
   float radius = (float)Math.cbrt((3*mass)/(PI*density));
   
-  double rocheDistance = planetRad*Math.pow((2* (planetDensity/(density*1000))),(0.3333));
+  double rocheDistance = 2.44*planetRad*Math.pow((2* (planetDensity/(density*1000))),(0.333333333));
+  println("Density " + density);
   println("Roche "+rocheDistance);
   
   println("Roche in pixels: "+ ((rocheDistance-offset)/scale));
