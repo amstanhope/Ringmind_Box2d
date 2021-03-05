@@ -45,9 +45,9 @@ public void initControls(){
     ;
     
   puttons.add(new Putton("G", 50,50, 6.674e-11f, 3.674e-11f));
-  puttons.add(new Putton("partis", 50, 70, 40, 500));
-  puttons.add(new Putton("inner_ringdius", 50, 90, 300f, 200f));
-  puttons.add(new Putton("outter_ringdius", 50, 110, 430f, 200f));
+  puttons.add(new Putton("partis", 50, 70, 100, 500));
+  puttons.add(new Putton("inner_ringdius", 50, 90, 200f, 200f));
+  puttons.add(new Putton("outter_ringdius", 50, 110, 800f, 200f));
   
   off = 160;
   cp5.addTextlabel("play")
@@ -56,18 +56,18 @@ public void initControls(){
     .setColorValue(0xffE5F3FF)
     .setFont(createFont("Arial",17))
   ;
-  puttons.add(new Putton("moon_min", 50, 0+off, 1, 4));
-  puttons.add(new Putton("burstNum", 50, 20+off, 8, 6));
+  puttons.add(new Putton("moon_min", 50, 0+off, 1.5f, 4));
+  puttons.add(new Putton("burstNum", 50, 20+off, 4, 6));
   puttons.add(new Putton("rockDensity", 50, 40+off, 5, 4));
   puttons.add(new Putton("iceDensity", 50, 60+off, 0.88f, .6f));
-  puttons.add(new Putton("defaultMass", 50, 80+off, 0.3f*PI, 0.3f*PI));
+  puttons.add(new Putton("defaultMass", 50, 80+off, 0.3f*PI, 0.7f*PI));
   puttons.add(new Putton("planetForceRange", 50, 100+off, 700, 200));
   puttons.add(new Putton("planetMass", 50, 120+off, 0.5e14f, 2.0e14f, true));
   puttons.add(new Putton("planetMinPixelsDistance", 50, 140+off, 171, 60));
   puttons.add(new Putton("moonForceRange", 50, 160+off, 200, 100));
   puttons.add(new Putton("burst_check_frequency", 50, 180+off, 5, 4));
   puttons.add(new Putton("burstAccel", 50, 200+off, 2, 1));
-  puttons.add(new Putton("minimumMass", 50, 220+off, 0.1f*PI, 0.1f*PI));
+  puttons.add(new Putton("minimumMass", 50, 220+off, 0.1f*PI, 0.5f*PI));
   
   off = 435;
   cp5.addTextlabel("prob")

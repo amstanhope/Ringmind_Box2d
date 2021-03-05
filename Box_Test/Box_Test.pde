@@ -62,10 +62,23 @@ boolean spacePressed = false;
 boolean cPressed = false;
 boolean pPressed = true;
 
+PrintWriter output;
+int threshold = 1000;
+int timeLimit = 60000;
+String fileName;
+
 
 void setup() {
-  size(1600, 1000);
+  if (args != null)
+  {
+    fileName = args[0];
+  }
+  else
+    fileName = "moonDataUnnamed.txt";
+  size(1920, 1000);
   //frameRate(30);
+  
+  output = createWriter(fileName);
 
   init();
   initControls();
@@ -110,6 +123,8 @@ void init()
 }
 void draw() 
 {
+  int timePassed = millis();
+  
   if(pPressed) // if not paused
   {
     background(backColor);
@@ -185,6 +200,24 @@ void draw()
     //}
     
     updateControls();
+  
+  }
+  
+  
+  
+  if(timePassed > threshold)
+  {
+    for (Mun moon:muns)
+    {
+      output.println(moon.outputString());
+    }
+    if(timePassed > timeLimit)
+    {
+      output.flush();
+      output.close();
+      exit();
+    }
+    threshold = threshold + 1000;
   }
 }
 
@@ -199,6 +232,11 @@ void keyPressed(){
     break;
     case 'p':
       pPressed = !pPressed;
+    break;
+    case 'e':
+      output.flush();
+      output.close();
+      exit();
     default:
     break;
     

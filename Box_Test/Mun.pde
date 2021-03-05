@@ -80,4 +80,16 @@ class Mun extends Particle{
     popMatrix();
   }
   
+  String outputString()
+  {
+      String output;
+      
+      Vec2 pixelPosition = box2d.coordWorldToPixels(body.getPosition());
+      float distance = planet.pixelPosition.sub(pixelPosition).length();
+      
+      output = r + "," + density + "," + pixelPosition.x + "," + pixelPosition.y + "," + distance ;
+      println(output);
+      return output;
+  }
+  
 }

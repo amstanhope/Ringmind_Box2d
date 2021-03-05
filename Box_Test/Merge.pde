@@ -156,9 +156,9 @@ class Burst extends Merge{
 
 boolean roche_check(Vec2 position, float mass, float density){
   
-  println("Position" + position);
+  //println("Position" + position);
   float distance = planet.pixelPosition.sub(position).length();
-  println("Distance "+distance); //need the distance to be the distance to the middle.
+  //println("Distance "+distance); //need the distance to be the distance to the middle.
  
    float scale = 162791;
    scale = 350000;
@@ -171,14 +171,14 @@ boolean roche_check(Vec2 position, float mass, float density){
   float radius = (float)Math.cbrt((3*mass)/(PI*density));
   
   double rocheDistance = 2.44*planetRad*Math.pow((2* (planetDensity/(density*1000))),(0.333333333));
-  println("Density " + density);
-  println("Roche "+rocheDistance);
+  //println("Density " + density);
+  //println("Roche "+rocheDistance);
   
-  println("Roche in pixels: "+ ((rocheDistance-offset)/scale));
+  //println("Roche in pixels: "+ ((rocheDistance-offset)/scale));
   
   float trueDistance = distance*scale +offset;
   
-  println("true distance " + trueDistance);
+  //println("true distance " + trueDistance);
   
   
   float prob = sigmoid(distance, rocheLimit, 100f/rocheLimit);
